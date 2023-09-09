@@ -82,16 +82,28 @@ echo ################
 
 ############# Commands...
 
-echo "8 processos"
-mpirun -np 8 ./$program 1> files_job_$SLURM_JOBID/saida_8.txt 2> files_job_$SLURM_JOBID/tempos_8.txt
+echo "2 processos"
+mpirun -np 2 ./$program 1> files_job_$SLURM_JOBID/saida_2.txt 2> files_job_$SLURM_JOBID/tempos_2.txt
 echo
+# 
+# echo "4 processos"
+# mpirun -np 4 ./$program 1> files_job_$SLURM_JOBID/saida_4.txt 2> files_job_$SLURM_JOBID/tempos_4.txt
+# echo
+# 
+# echo "8 processos"
+# mpirun -np 8 ./$program 1> files_job_$SLURM_JOBID/saida_8.txt 2> files_job_$SLURM_JOBID/tempos_8.txt
+# echo
 # 
 # echo "16 processos"
 # mpirun -np 16 ./$program 1> files_job_$SLURM_JOBID/saida_16.txt 2> files_job_$SLURM_JOBID/tempos_16.txt
 # echo
 # 
-# echo "32 processos"
-# mpirun -np 32 ./$program 1> files_job_$SLURM_JOBID/saida_32.txt 2> files_job_$SLURM_JOBID/tempos_32.txt
+# echo "2 processos (bynode)"
+# mpirun --map-by node -np 2 ./$program 1> files_job_$SLURM_JOBID/saida_b2.txt 2> files_job_$SLURM_JOBID/tempos_b2.txt
+# echo
+# 
+# echo "4 processos (bynode)"
+# mpirun --map-by node -np 4 ./$program 1> files_job_$SLURM_JOBID/saida_b4.txt 2> files_job_$SLURM_JOBID/tempos_b4.txt
 # echo
 # 
 # echo "8 processos (bynode)"
@@ -100,10 +112,6 @@ echo
 # 
 # echo "16 processos (bynode)"
 # mpirun --map-by node -np 16 ./$program 1> files_job_$SLURM_JOBID/saida_b16.txt 2> files_job_$SLURM_JOBID/tempos_b16.txt
-# echo
-# 
-# echo "32 processos (bynode)"
-# mpirun --map-by node -np 32 ./$program 1> files_job_$SLURM_JOBID/saida_b32.txt 2> files_job_$SLURM_JOBID/tempos_b32.txt
 # echo
 # 
 ################
