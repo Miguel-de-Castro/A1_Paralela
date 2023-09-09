@@ -2,9 +2,9 @@
 #include <string.h>
 #include <omp.h>
 
-#define START  100000
-#define STEP   100000
-#define END   1000000
+#define START  10
+#define STEP   10
+#define END   100
 
 #define DIGITS 1000
 
