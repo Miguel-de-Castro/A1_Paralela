@@ -57,7 +57,7 @@
 
 ################ Please, change this directory to your working dir.
 
-#SBATCH -D /home/pp03010/A1_Felipe_Nipper_Miguel_Castro
+#SBATCH -D /home/pp03010/A1_Paralela
 
 ################
 
