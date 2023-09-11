@@ -1,0 +1,34 @@
+#!/bin/bash
+#SBATCH -t 20 # tempo maximo de execucao: 5min
+#SBATCH --exclusive
+#SBATCH --no-requeue
+#SBATCH -o %x.%j.out # formato do nome do arquivo de saída
+################
+
+echo Running on host `hostname`
+echo
+echo Initial Time is `date`
+echo
+echo Directory is `pwd`
+echo
+echo This jobs runs on the following nodes:
+echo $SLURM_JOB_NODELIST
+echo
+echo JOB_ID:
+echo $SLURM_JOBID
+mkdir files_job_$SLURM_JOBID
+echo Criado dir files_job_$SLURM_JOBID
+program=$1
+echo Running $program 
+gcc $program.c -o $program -fopenmp
+echo ################
+
+############# Commands...
+
+echo "2 processos"
+./$program 1> files_job_$SLURM_JOBID/saida_2.txt 2> files_job_$SLURM_JOBID/tempos_2.txt
+echo
+
+################
+
+echo Final Time is `date`
