@@ -26,6 +26,7 @@ echo ################
 ############# Commands...
 
 echo "2 processos"
+export OMP_NUM_THREADS=2
 ./$program 1> files_job_$SLURM_JOBID/saida_2.txt 2> files_job_$SLURM_JOBID/tempos_2.txt
 echo
 
