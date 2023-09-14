@@ -33,3 +33,4 @@ echo
 ################
 
 echo Final Time is `date`
+cat files_job_$SLURM_JOBID/tempos_2.txt
