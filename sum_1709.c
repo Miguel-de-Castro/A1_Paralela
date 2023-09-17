@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <omp.h>
+#include <stdlib.h>
 
 // #define START  100000
 // #define STEP   100000
