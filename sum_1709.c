@@ -23,8 +23,12 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
     #pragma omp parallel for private(remainder, div, mod) shared(digits)
     for (i = 1; i <= n; ++i) {
         remainder = 1;
-        long unsigned int local_digits[d + 11];
-        memcpy(local_digits, digits, sizeof(local_digits));
+        long unsigned int *local_digits = (long unsigned int *)malloc((d + 11) * sizeof(long unsigned int));
+        if (!local_digits) {
+            // Handle malloc failure
+            exit(1);
+        }
+        memcpy(local_digits, digits, (d + 11) * sizeof(long unsigned int));
         
         for (digit = 0; digit < d + 11 && remainder; ++digit) {
             div = remainder / i;
@@ -39,6 +43,8 @@ void sum(char* output, const long unsigned int d, const long unsigned int n) {
                 digits[digit] += local_digits[digit];
             }
         }
+
+        free(local_digits);
     }
 
     for (i = d + 11 - 1; i > 0; --i) {
