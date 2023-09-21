@@ -1,4 +1,4 @@
-sum.c (Roland Teodorowitsch)
+/* sum.c (Roland Teodorowitsch)
  * Compilation: gcc sum.c -o sum -fopenmp
  * Adapted from: http://lspd.mackenzie.br/marathon/06/sum.zip
  */
