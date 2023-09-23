@@ -30,7 +30,21 @@ export OMP_NUM_THREADS=2
 ./$program 1> files_job_$SLURM_JOBID/saida_2.txt 2> files_job_$SLURM_JOBID/tempos_2.txt
 echo
 
+echo "4 processos"
+export OMP_NUM_THREADS=4
+./$program 1> files_job_$SLURM_JOBID/saida_4.txt 2> files_job_$SLURM_JOBID/tempos_4.txt
+echo
+
+echo "8 processos"
+export OMP_NUM_THREADS=8
+./$program 1> files_job_$SLURM_JOBID/saida_8.txt 2> files_job_$SLURM_JOBID/tempos_8.txt
+echo
+
+echo "16 processos"
+export OMP_NUM_THREADS=16
+./$program 1> files_job_$SLURM_JOBID/saida_16.txt 2> files_job_$SLURM_JOBID/tempos_16.txt
+echo
+
 ################
 
 echo Final Time is `date`
-cat files_job_$SLURM_JOBID/tempos_2.txt
